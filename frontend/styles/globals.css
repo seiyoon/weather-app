@@ -24,3 +24,34 @@ a {
     background: black;
   }
 }
+
+@font-face {
+  font-family: "pretendardR";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../public/fonts/PretendardVariable.woff2") format("woff2");
+}
+@font-face {
+  font-family: "pretendardM";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../public/fonts/PretendardVariable.woff2") format("woff2");
+}
+@font-face {
+  font-family: "pretendardSB";
+  font-weight: 600;
+  font-style: normal;
+  src: url("../public/fonts/PretendardVariable.woff2") format("woff2");
+}
+@font-face {
+  font-family: "pretendardB";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../public/fonts/PretendardVariable.woff2") format("woff2");
+}
+@font-face {
+  font-family: "pretendardEB";
+  font-weight: 800;
+  font-style: normal;
+  src: url("../public/fonts/PretendardVariable.woff2") format("woff2");
+}
