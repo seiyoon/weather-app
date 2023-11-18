@@ -46,6 +46,7 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
+  margin-bottom: 7.6rem;
 }
 
 .button {
@@ -68,12 +69,6 @@
 .button:active {
   background-color: #ffaba1;
   border-color: #ff0045;
-}
-
-.earth_img {
-  width: 43rem;
-  height: 32.1rem;
-  margin-top: 7rem;
 }
 
 @media (max-width: 600px) {

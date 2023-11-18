@@ -7,7 +7,7 @@ export default function WeatherBar() {
   return (
     <div className={styles.weather_bar}>
       <div className={styles.image}>
-        <Image alt="earth" src={earth} className={styles.earth_img} />
+        <Image alt="earth" src={earth} width={80} height={80} />
       </div>
       <div className={styles.bar}>
         <div className={styles.first}>

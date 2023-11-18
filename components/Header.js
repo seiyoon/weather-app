@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 
 import styles from "../styles/Header.module.css";
-import earth from "../public/assets/images/earth.svg";
+import earth from "../public/assets/images/earth.webp";
 
 export default function Header({ children }) {
   return (
@@ -12,7 +12,7 @@ export default function Header({ children }) {
         <link rel="icon" href="/assets/images/earth.png" />
       </Head>
       <div className={styles.main}>
-        <Image alt="earth" src={earth} className={styles.earth_img} />
+        <Image alt="earth" src={earth} width={68} height={51} loading="lazy" />
         <h1 className={styles.title}>Weather Information for {children}</h1>
       </div>
     </div>

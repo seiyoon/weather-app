@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
-import earth from "../public/assets/images/earth.svg";
+import earth from "../public/assets/images/earth.webp";
 
 export default function Home() {
   return (
@@ -39,7 +39,13 @@ export default function Home() {
             <div className={styles.button}>London</div>
           </Link>
         </div>
-        <Image alt="earth" src={earth} className={styles.earth_img} />
+        <Image
+          alt="earth"
+          src={earth}
+          width={430}
+          height={321}
+          loading="lazy"
+        />
       </div>
     </div>
   );
