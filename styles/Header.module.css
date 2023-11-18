@@ -1,0 +1,28 @@
+@media (max-width: 799px) {
+  .header {
+    width: 800px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.main {
+  margin: 0;
+  padding: 0;
+  margin: 4rem;
+  text-align: center;
+}
+.earth_img {
+  margin: 0;
+  padding: 0;
+  width: 68px;
+  height: 51px;
+}
+.title {
+  margin-top: 10px;
+  padding: 0;
+  font-size: 4rem;
+  font-family: "PretendardEB";
+  line-height: 110%;
+  color: #3d3d3d;
+}
