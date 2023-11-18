@@ -1,18 +1,40 @@
-html,
+/* html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #faf7f5;
+} */
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+  margin: 0 auto;
+  position: relative;
+  background-color: #faf7f5;
+}
+
+#root {
+  margin: 0 auto;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,31 +48,31 @@ a {
 }
 
 @font-face {
-  font-family: "pretendardR";
+  font-family: "PretendardR";
   font-weight: 400;
   font-style: normal;
   src: url("../public/fonts/PretendardVariable.woff2") format("woff2");
 }
 @font-face {
-  font-family: "pretendardM";
+  font-family: "PretendardM";
   font-weight: 500;
   font-style: normal;
   src: url("../public/fonts/PretendardVariable.woff2") format("woff2");
 }
 @font-face {
-  font-family: "pretendardSB";
+  font-family: "PretendardSB";
   font-weight: 600;
   font-style: normal;
   src: url("../public/fonts/PretendardVariable.woff2") format("woff2");
 }
 @font-face {
-  font-family: "pretendardB";
+  font-family: "PretendardB";
   font-weight: 700;
   font-style: normal;
   src: url("../public/fonts/PretendardVariable.woff2") format("woff2");
 }
 @font-face {
-  font-family: "pretendardEB";
+  font-family: "PretendardEB";
   font-weight: 800;
   font-style: normal;
   src: url("../public/fonts/PretendardVariable.woff2") format("woff2");
