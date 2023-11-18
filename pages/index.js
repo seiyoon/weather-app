@@ -39,13 +39,15 @@ export default function Home() {
             <div className={styles.button}>London</div>
           </Link>
         </div>
-        <Image
-          alt="earth"
-          src={earth}
-          width={430}
-          height={321}
-          priority={true}
-        />
+        <div className={styles.img}>
+          <Image
+            alt="earth"
+            src={earth}
+            width={430}
+            height={321}
+            priority={true}
+          />
+        </div>
       </div>
     </div>
   );
