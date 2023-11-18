@@ -9,6 +9,7 @@ export default function Header({ children }) {
     <div className={styles.header}>
       <Head>
         <title>{children} Page</title>
+        <meta name="description" content="weather app using Open Weather API" />
         <link rel="icon" href="/assets/images/earth.png" />
       </Head>
       <div className={styles.main}>

@@ -11,17 +11,17 @@ export default function WeatherBar() {
       </div>
       <div className={styles.bar}>
         <div className={styles.first}>
-          <span className={styles.date}>May 23. 03:00am</span>
+          <text className={styles.date}>May 23. 03:00am</text>
           <div className={styles.country}>
-            <span className={styles.location}>Seoul, KR</span>
-            <span className={styles.people}>(인구수 : 10349312)</span>
+            <text className={styles.location}>Seoul, KR</text>
+            <text className={styles.people}>(인구수 : 10349312)</text>
           </div>
         </div>
         <div className={styles.second}>
-          <span className={styles.temperature}>292.98℃</span>
-          <span className={styles.description}>
+          <text className={styles.temperature}>292.98℃</text>
+          <text className={styles.description}>
             Feels like 291.91℃ clear sky 풍속 3.33m/s 습도 34%
-          </span>
+          </text>
         </div>
       </div>
     </div>

@@ -44,7 +44,7 @@ export default function Home() {
           src={earth}
           width={430}
           height={321}
-          loading="lazy"
+          priority={true}
         />
       </div>
     </div>
