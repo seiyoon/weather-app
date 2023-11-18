@@ -1,3 +1,9 @@
+import Header from "../../components/Header";
+
 export default function Seoul() {
-  return <div>Seoul Page</div>;
+  return (
+    <div>
+      <Header>Seoul</Header>
+    </div>
+  );
 }

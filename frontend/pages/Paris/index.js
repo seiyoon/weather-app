@@ -1,3 +1,9 @@
+import Header from "../../components/Header";
+
 export default function Paris() {
-  return <div>Paris Page</div>;
+  return (
+    <div>
+      <Header>Paris</Header>
+    </div>
+  );
 }

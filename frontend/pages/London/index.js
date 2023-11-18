@@ -1,3 +1,9 @@
+import Header from "../../components/Header";
+
 export default function London() {
-  return <div>London Page</div>;
+  return (
+    <div>
+      <Header>London</Header>
+    </div>
+  );
 }
