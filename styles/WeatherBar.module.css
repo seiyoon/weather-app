@@ -90,9 +90,7 @@
 
 @media (min-width: 800px) and (max-width: 1279px) {
   .weather_bar {
-    width: calc(
-      100% - 80px
-    ); /* Responsive width with 40px spacing on both sides */
-    margin: auto; /* Center the layout */
+    width: calc(100% - 80px);
+    margin: auto;
   }
 }
