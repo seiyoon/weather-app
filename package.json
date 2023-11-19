@@ -14,6 +14,7 @@
     "@as-integrations/next": "^3.0.0",
     "apollo-server-core": "^3.13.0",
     "graphql": "^16.8.1",
+    "graphql-loader": "^1.2.1",
     "graphql-tag": "^2.12.6",
     "next": "12.2.0",
     "react": "18.2.0",

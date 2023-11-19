@@ -1,0 +1,17 @@
+query getCurrentWeatherData {
+  currentWeatherData {
+    main {
+      temp
+      feels_like
+      humidity
+    }
+    weather {
+      description
+      icon
+    }
+    wind {
+      speed
+    }
+    dt_txt
+  }
+}

@@ -899,6 +899,11 @@ asynckit@^0.4.0:
   resolved "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz"
   integrity sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==
 
+autobind-decorator@^1.3.4:
+  version "1.4.3"
+  resolved "https://registry.npmjs.org/autobind-decorator/-/autobind-decorator-1.4.3.tgz"
+  integrity sha512-FRzT10Vc0lzgDOhMTpm9a2kZF6Q+MMGwd6Y7OGgHigMZwGz7vpN4qH9ifiPTum8mhJQV9UqLPperHxc9yalAAA==
+
 available-typed-arrays@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz"
@@ -1777,6 +1782,14 @@ graphemer@^1.4.0:
   resolved "https://registry.npmjs.org/graphemer/-/graphemer-1.4.0.tgz"
   integrity sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==
 
+graphql-loader@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/graphql-loader/-/graphql-loader-1.2.1.tgz"
+  integrity sha512-jy3prTSJ3avwKq4TN5X/dsU4WZdG9W3UPcd6oGWhQfeSrcboU5SoLBsh+YIvJnrBB75cl0UMBcvcyN+Kk4DxbA==
+  dependencies:
+    autobind-decorator "^1.3.4"
+    lodash "^4.17.3"
+
 graphql-tag@^2.11.0, graphql-tag@^2.12.6:
   version "2.12.6"
   resolved "https://registry.npmjs.org/graphql-tag/-/graphql-tag-2.12.6.tgz"
@@ -2172,6 +2185,11 @@ lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.npmjs.org/lodash.sortby/-/lodash.sortby-4.7.0.tgz"
   integrity sha512-HDWXG8isMntAyRF5vZ7xKuEvOhT4AhlRt/3czTSjvGUxjYCBVRQY48ViDHyfYz9VIoBkW4TMGQNapx+l3RUwdA==
+
+lodash@^4.17.3:
+  version "4.17.21"
+  resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 loglevel@^1.6.8:
   version "1.8.1"
