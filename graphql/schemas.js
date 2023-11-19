@@ -2,7 +2,18 @@ import { gql } from "graphql-tag";
 
 const typeDefs = gql`
   type Query {
-    weatherData: [Weather]
+    weatherData: WeatherData
+  }
+
+  type WeatherData {
+    city: City
+    list: [Weather]
+  }
+
+  type City {
+    name: String
+    country: String
+    population: Int
   }
 
   type Weather {
@@ -22,6 +33,8 @@ const typeDefs = gql`
   }
 
   type WeatherInfo {
+    id: Int
+    main: String
     description: String
     icon: String
   }
@@ -30,4 +43,5 @@ const typeDefs = gql`
     speed: Float
   }
 `;
+
 export default typeDefs;

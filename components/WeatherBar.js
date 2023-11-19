@@ -2,11 +2,14 @@ import Image from "next/image";
 import styles from "../styles/WeatherBar.module.css";
 import earth from "../public/assets/images/earth.png";
 
-export default function WeatherBar({ weatherData }) {
-  // weatherData 배열이 비어있거나 정의되지 않았을 경우 예외 처리
-  if (!weatherData || weatherData.length === 0) {
+export default function WeatherBar({ weatherData, cityData }) {
+  // Check if weatherData or cityData is undefined
+  if (!weatherData || !cityData) {
     return null;
   }
+
+  console.log("weatherData:", weatherData);
+  console.log("cityData:", cityData);
 
   return (
     <div className={styles.weather_bar}>
@@ -17,8 +20,12 @@ export default function WeatherBar({ weatherData }) {
         <div className={styles.first}>
           <text className={styles.date}>{weatherData.dt_txt.slice(0, -3)}</text>
           <div className={styles.country}>
-            <text className={styles.location}>Seoul, KR</text>
-            <text className={styles.people}>(인구수 : 10349312)</text>
+            <text className={styles.location}>
+              {cityData.name}, {cityData.country}
+            </text>
+            <text className={styles.people}>
+              (인구수 : {cityData.population})
+            </text>
           </div>
         </div>
         <div className={styles.second}>

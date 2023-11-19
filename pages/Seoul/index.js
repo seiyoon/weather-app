@@ -14,12 +14,19 @@ export default function Seoul() {
   const weatherRef = useRef(null);
 
   const { data, error } = useQuery(GET_WeatherData);
-  const firstWeather = weatherData[2];
+
+  const [selectedWeather, setSelectedWeather] = useState(null);
 
   useEffect(() => {
     if (data) {
-      setWeatherData(data.weatherData);
-      weatherRef.current = data.weatherData;
+      // Assuming data.weatherData is an object with properties city and list
+      const { city, list } = data.weatherData;
+
+      // Assuming you want to select the third item in the list as the firstWeather
+      const firstWeather = list && list.length >= 3 ? list[2] : null;
+
+      setWeatherData({ city, list });
+      setSelectedWeather(firstWeather);
     }
   }, [data]);
 
@@ -28,12 +35,10 @@ export default function Seoul() {
     return null;
   }
 
-  console.log(weatherData);
-
   return (
     <div className={styles.container}>
       <Header>Seoul</Header>
-      <WeatherBar weatherData={firstWeather} />
+      <WeatherBar weatherData={selectedWeather} cityData={weatherData.city} />
       <WeatherList />
     </div>
   );

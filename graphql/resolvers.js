@@ -11,25 +11,35 @@ const resolvers = {
         }
 
         const data = await response.json();
-        // Assuming the relevant weather data is nested under the 'list' property
+
+        const city = {
+          name: data.city.name,
+          country: data.city.country,
+          population: data.city.population,
+        };
+
         const weatherDataList = data.list;
 
-        // Process the data as needed, and return the array of weather objects
-        const formattedWeatherData = weatherDataList.map((item) => ({
-          dt: item.dt,
-          main: {
-            temp: item.main.temp,
-            feels_like: item.main.feels_like,
-            temp_min: item.main.temp_min,
-            temp_max: item.main.temp_max,
-            humidity: item.main.humidity,
-          },
-          weather: Array.isArray(item.weather) ? item.weather : [item.weather],
-          wind: {
-            speed: item.wind.speed,
-          },
-          dt_txt: item.dt_txt,
-        }));
+        const formattedWeatherData = {
+          city: city,
+          list: weatherDataList.map((item) => ({
+            dt: item.dt,
+            main: {
+              temp: item.main.temp,
+              feels_like: item.main.feels_like,
+              temp_min: item.main.temp_min,
+              temp_max: item.main.temp_max,
+              humidity: item.main.humidity,
+            },
+            weather: Array.isArray(item.weather)
+              ? item.weather
+              : [item.weather],
+            wind: {
+              speed: item.wind.speed,
+            },
+            dt_txt: item.dt_txt,
+          })),
+        };
 
         return formattedWeatherData;
       } catch (error) {
