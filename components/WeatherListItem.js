@@ -26,12 +26,17 @@ export default function WeatherListItem({ date, isToggled, onClick, details }) {
               <div key={index} className={styles.detailItem}>
                 <p>☀️</p>
                 <div className={styles.info}>
-                  <p className={styles.text_time}>{detail.time}</p>
+                  <p className={styles.text_time}>
+                    {detail.dt_txt.slice(11, 16)}
+                  </p>
                   <div className={styles.weather}>
                     <span className={styles.text_weather}>
-                      {detail.weather}
+                      {detail.weather[0].description}
                     </span>
-                    <text className={styles.text}>{detail.temperature}</text>
+                    <span className={styles.text}>
+                      {" "}
+                      {detail.main.temp_min}℃ / {detail.main.temp_max}℃
+                    </span>
                   </div>
                 </div>
               </div>

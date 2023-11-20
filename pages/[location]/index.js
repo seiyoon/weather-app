@@ -2,33 +2,39 @@ import Header from "../../components/Header";
 import WeatherBar from "../../components/WeatherBar";
 import WeatherList from "../../components/WeatherList";
 import styles from "../../styles/View.module.css";
-
-import { useEffect, useRef, useState } from "react";
-import { useLazyQuery, useQuery } from "@apollo/client";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { useQuery } from "@apollo/client";
 
 import GET_WeatherData from "../../graphql/queries/getWeatherData.gql";
 
-export default function Seoul() {
+export default function WeatherPage() {
   const [weatherData, setWeatherData] = useState([]);
-
-  const weatherRef = useRef(null);
-
-  const { data, error } = useQuery(GET_WeatherData);
-
   const [selectedWeather, setSelectedWeather] = useState(null);
+  const [weather, setWeather] = useState([]);
+
+  const router = useRouter();
+  const { location } = router.query;
+
+  const { loading, error, data } = useQuery(GET_WeatherData, {
+    variables: { cityName: location },
+  });
 
   useEffect(() => {
     if (data) {
-      // Assuming data.weatherData is an object with properties city and list
       const { city, list } = data.weatherData;
 
-      // Assuming you want to select the third item in the list as the firstWeather
       const firstWeather = list && list.length >= 3 ? list[2] : null;
 
       setWeatherData({ city, list });
+      setWeather({ list });
       setSelectedWeather(firstWeather);
     }
   }, [data]);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   if (error) {
     console.error(error);
@@ -37,9 +43,9 @@ export default function Seoul() {
 
   return (
     <div className={styles.container}>
-      <Header>Seoul</Header>
+      <Header>{location}</Header>
       <WeatherBar weatherData={selectedWeather} cityData={weatherData.city} />
-      <WeatherList />
+      <WeatherList weatherData={weather} />
     </div>
   );
 }
