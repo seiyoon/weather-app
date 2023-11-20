@@ -3,7 +3,7 @@ const resolvers = {
     weatherData: async (_, { cityName }) => {
       try {
         const response = await fetch(
-          `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${process.env.API_KEY}`
+          `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${process.env.API_KEY}&units=metric`
         );
 
         if (!response.ok) {
