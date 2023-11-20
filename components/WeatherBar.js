@@ -8,9 +8,6 @@ export default function WeatherBar({ weatherData, cityData }) {
     return null;
   }
 
-  console.log("weatherData:", weatherData);
-  console.log("cityData:", cityData);
-
   return (
     <div className={styles.weather_bar}>
       <div className={styles.image}>
