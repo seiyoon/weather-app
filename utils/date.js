@@ -7,10 +7,10 @@ export const formatDate = (dateString) => {
 export const formatTime = (timeString) => {
   const options = { hour: "numeric", minute: "numeric", hour12: false };
   const time = new Date(timeString);
-  const formattedTime = time
-    .toLocaleTimeString("en-US", options)
-    .toLowerCase()
-    .replace(/\s/g, "");
+
+  const formattedHour = (time.getHours() % 24).toString().padStart(2, "0");
+  const formattedTime =
+    formattedHour + ":" + time.getMinutes().toString().padStart(2, "0");
 
   const period = time.getHours() < 12 ? "am" : "pm";
 
