@@ -29,16 +29,6 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
-
 @font-face {
   font-family: "PretendardR";
   font-weight: 400;

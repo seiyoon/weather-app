@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Header.module.css";
-import earth from "../public/assets/images/earth.webp";
+import earth_svg from "../public/assets/images/earth.svg";
 
 export default function Header({ children }) {
   return (
@@ -16,7 +16,7 @@ export default function Header({ children }) {
         <Link href="/" as={"/"}>
           <Image
             alt="earth"
-            src={earth}
+            src={earth_svg}
             width={68}
             height={51}
             loading="lazy"
