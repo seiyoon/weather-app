@@ -6,7 +6,6 @@ export default function WeatherBar({ weatherData, cityData }) {
   if (!weatherData || !cityData) {
     return null;
   }
-  console.log(weatherData.weather[0].icon);
 
   return (
     <div className={styles.weather_bar}>
