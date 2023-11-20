@@ -3,7 +3,6 @@ import styles from "../styles/WeatherBar.module.css";
 import earth from "../public/assets/images/earth.png";
 
 export default function WeatherBar({ weatherData, cityData }) {
-  // Check if weatherData or cityData is undefined
   if (!weatherData || !cityData) {
     return null;
   }

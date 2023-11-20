@@ -6,47 +6,7 @@ import WeatherListItem from "./WeatherListItem";
 import keydown from "../public/assets/icons/keydown.svg";
 import keyup from "../public/assets/icons/keyup.svg";
 
-const weatherData = [
-  {
-    date: "Date1",
-    details: [
-      { time: "12:00 PM", weather: "Sunny", temperature: "284.54" },
-      { time: "03:00 PM", weather: "Cloudy", temperature: "284.54" },
-    ],
-  },
-  {
-    date: "Date2",
-    details: [
-      { time: "12:00 PM", weather: "Sunny", temperature: "284.54" },
-      { time: "03:00 PM", weather: "Cloudy", temperature: "284.54" },
-      { time: "03:00 PM", weather: "Cloudy", temperature: "284.54" },
-      { time: "03:00 PM", weather: "Cloudy", temperature: "284.54" },
-    ],
-  },
-  {
-    date: "Date3",
-    details: [
-      { time: "12:00 PM", weather: "Sunny", temperature: "284.54" },
-      { time: "03:00 PM", weather: "Cloudy", temperature: "284.54" },
-    ],
-  },
-  {
-    date: "Date4",
-    details: [
-      { time: "12:00 PM", weather: "Sunny", temperature: "284.54" },
-      { time: "03:00 PM", weather: "Cloudy", temperature: "284.54" },
-    ],
-  },
-  {
-    date: "Date5",
-    details: [
-      { time: "12:00 PM", weather: "Sunny", temperature: "284.54" },
-      { time: "03:00 PM", weather: "Cloudy", temperature: "284.54" },
-    ],
-  },
-];
-
-export default function WeatherList() {
+export default function WeatherList({ weatherData }) {
   const [toggle, setToggle] = useState({});
 
   const toggleComment = (idx) => {
@@ -56,18 +16,34 @@ export default function WeatherList() {
     }));
   };
 
+  // dt_txt를 기준으로 데이터를 그룹화
+  const groupedData = {};
+
+  // weatherData.list에 데이터가 있는지 확인
+  if (weatherData.list && weatherData.list.length > 0) {
+    weatherData.list.forEach((item, idx) => {
+      const date = item.dt_txt.split(" ")[0];
+
+      if (!groupedData[date]) {
+        groupedData[date] = [];
+      }
+
+      groupedData[date].push(item);
+    });
+  }
+
   return (
     <div className={styles.list}>
       <div className={styles.title}>
         <p className={styles.titleText}>5-day Forecast</p>
       </div>
-      {weatherData.map((item, idx) => (
+      {Object.entries(groupedData).map(([date, details], idx) => (
         <WeatherListItem
           key={idx}
-          date={item.date}
+          date={date}
           isToggled={toggle[idx]}
           onClick={() => toggleComment(idx)}
-          details={item.details}
+          details={details}
         />
       ))}
     </div>

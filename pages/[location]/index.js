@@ -11,6 +11,7 @@ import GET_WeatherData from "../../graphql/queries/getWeatherData.gql";
 export default function WeatherPage() {
   const [weatherData, setWeatherData] = useState([]);
   const [selectedWeather, setSelectedWeather] = useState(null);
+  const [weather, setWeather] = useState([]);
 
   const router = useRouter();
   const { location } = router.query;
@@ -26,6 +27,7 @@ export default function WeatherPage() {
       const firstWeather = list && list.length >= 3 ? list[2] : null;
 
       setWeatherData({ city, list });
+      setWeather({ list });
       setSelectedWeather(firstWeather);
     }
   }, [data]);
@@ -43,7 +45,7 @@ export default function WeatherPage() {
     <div className={styles.container}>
       <Header>{location}</Header>
       <WeatherBar weatherData={selectedWeather} cityData={weatherData.city} />
-      <WeatherList />
+      <WeatherList weatherData={weather} />
     </div>
   );
 }
