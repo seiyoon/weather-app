@@ -2,8 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
-import earthImage from "../public/assets/images/earth.png";
-import earth from "../public/assets/images/earth.webp";
+import earth_svg from "../public/assets/images/earth.svg";
 
 const cities = ["Seoul", "Tokyo", "Paris", "London"];
 
@@ -37,7 +36,7 @@ export default function Home() {
         <div className={styles.img}>
           <Image
             alt="earth"
-            src={earth}
+            src={earth_svg}
             width={430}
             height={321}
             priority={true}
