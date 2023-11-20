@@ -2,7 +2,10 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import earthImage from "../public/assets/images/earth.png";
 import earth from "../public/assets/images/earth.webp";
+
+const cities = ["Seoul", "Tokyo", "Paris", "London"];
 
 export default function Home() {
   return (
@@ -21,22 +24,15 @@ export default function Home() {
           </span>
           <span className={styles.second_row}>Weather App!</span>
         </h1>
-        <h3 className={styles.description}>
+        <h2 className={styles.description}>
           Choose a city from the list below to check the weather.
-        </h3>
+        </h2>
         <div className={styles.row}>
-          <Link href="/Seoul">
-            <div className={styles.button}>Seoul</div>
-          </Link>
-          <Link href="/Tokyo">
-            <div className={styles.button}>Tokyo</div>
-          </Link>
-          <Link href="/Paris">
-            <div className={styles.button}>Paris</div>
-          </Link>
-          <Link href="/London">
-            <div className={styles.button}>London</div>
-          </Link>
+          {cities.map((city) => (
+            <Link key={city} href={`/${city}`}>
+              <a className={styles.button}>{city}</a>
+            </Link>
+          ))}
         </div>
         <div className={styles.img}>
           <Image
