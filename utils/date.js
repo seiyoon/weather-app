@@ -5,10 +5,14 @@ export const formatDate = (dateString) => {
 };
 
 export const formatTime = (timeString) => {
-  const options = { hour: "numeric", minute: "numeric", hour12: true };
+  const options = { hour: "numeric", minute: "numeric", hour12: false };
   const time = new Date(timeString);
-  return time
+  const formattedTime = time
     .toLocaleTimeString("en-US", options)
     .toLowerCase()
     .replace(/\s/g, "");
+
+  const period = time.getHours() < 12 ? "am" : "pm";
+
+  return formattedTime + period;
 };

@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../styles/WeatherList.module.css";
 import keydown from "../public/assets/icons/keydown.svg";
 import keyup from "../public/assets/icons/keyup.svg";
+import { formatTime } from "../utils/date";
 
 export default function WeatherListItem({ date, isToggled, onClick, details }) {
   const animationClass = isToggled
@@ -33,7 +34,7 @@ export default function WeatherListItem({ date, isToggled, onClick, details }) {
                 />
                 <div className={styles.info}>
                   <p className={styles.text_time}>
-                    {detail.dt_txt.slice(11, 16)}
+                    {formatTime(detail.dt_txt)}
                   </p>
                   <div className={styles.weather}>
                     <span className={styles.text_weather}>

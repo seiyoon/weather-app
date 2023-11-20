@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "../styles/WeatherBar.module.css";
-import earth from "../public/assets/images/earth.png";
+import { formatDate, formatTime } from "../utils/date";
 
 export default function WeatherBar({ weatherData, cityData }) {
   if (!weatherData || !cityData) {
@@ -20,7 +20,9 @@ export default function WeatherBar({ weatherData, cityData }) {
       </div>
       <div className={styles.bar}>
         <div className={styles.first}>
-          <span className={styles.date}>{weatherData.dt_txt.slice(0, -3)}</span>
+          <span className={styles.date}>
+            {formatDate(weatherData.dt_txt)}. {formatTime(weatherData.dt_txt)}
+          </span>
           <div className={styles.country}>
             <span className={styles.location}>
               {cityData.name}, {cityData.country}
