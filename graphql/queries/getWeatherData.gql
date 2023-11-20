@@ -1,0 +1,29 @@
+query GetWeatherData($cityName: String!) {
+  weatherData(cityName: $cityName) {
+    city {
+      name
+      country
+      population
+    }
+    list {
+      dt
+      main {
+        temp
+        feels_like
+        temp_min
+        temp_max
+        humidity
+      }
+      weather {
+        id
+        main
+        description
+        icon
+      }
+      wind {
+        speed
+      }
+      dt_txt
+    }
+  }
+}
