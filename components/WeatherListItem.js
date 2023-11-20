@@ -31,7 +31,7 @@ export default function WeatherListItem({ date, isToggled, onClick, details }) {
                     <span className={styles.text_weather}>
                       {detail.weather}
                     </span>
-                    <text className={styles.text}>{detail.temperature}</text>
+                    <span className={styles.text}>{detail.temperature}</span>
                   </div>
                 </div>
               </div>

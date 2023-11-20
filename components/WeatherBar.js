@@ -15,23 +15,23 @@ export default function WeatherBar({ weatherData, cityData }) {
       </div>
       <div className={styles.bar}>
         <div className={styles.first}>
-          <text className={styles.date}>{weatherData.dt_txt.slice(0, -3)}</text>
+          <span className={styles.date}>{weatherData.dt_txt.slice(0, -3)}</span>
           <div className={styles.country}>
-            <text className={styles.location}>
+            <span className={styles.location}>
               {cityData.name}, {cityData.country}
-            </text>
-            <text className={styles.people}>
+            </span>
+            <span className={styles.people}>
               (인구수 : {cityData.population})
-            </text>
+            </span>
           </div>
         </div>
         <div className={styles.second}>
-          <text className={styles.temperature}>{weatherData.main.temp}℃</text>
-          <text className={styles.description}>
+          <span className={styles.temperature}>{weatherData.main.temp}℃</span>
+          <span className={styles.description}>
             Feels like {weatherData.main.feels_like}℃{" "}
             {weatherData.weather[0].description} 풍속 {weatherData.wind.speed}
             m/s 습도 {weatherData.main.humidity}%
-          </text>
+          </span>
         </div>
       </div>
     </div>
