@@ -1,34 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 설치 및 실행
 
-## Getting Started
+프로젝트 레포지토리 클론   
+`$ git clone https://github.com/seiyoon/weather-app.git`
 
-First, run the development server:
+weather-app 폴더로 이동 후 remote 갱신   
+`$ git remote update`
 
-```bash
-npm run dev
-# or
-yarn dev
+package.json의 모듈 설치   
+`$ npm install`
+
+⚠️ .env.local 파일에 Open Weather API에서 발급받은 자신의 API KEY를 넣어야지 프로젝트가 실행됩니다.
+
+실행   
+`$ npm run dev`
+
+빌드   
+`$ npm run build`
+
+## 폴더 구조
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+├── 📂.github
+├── 📂components
+├── 📂graphql
+│ └── 📂queries
+├── 📂pages
+│ ├── 📂[location]
+│ └── 📂api
+├── 📂public
+│ ├── 📂assets
+│ │ ├── 📂icons 🗂 아이콘 저장
+│ │ └── 📂images 🗂 이미지 저장
+│ └── 📂fonts
+├── 📂styles
+├── 📂utils
+└── 📜각종 세팅 파일
+```
