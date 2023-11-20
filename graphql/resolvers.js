@@ -1,9 +1,9 @@
 const resolvers = {
   Query: {
-    weatherData: async () => {
+    weatherData: async (_, { cityName }) => {
       try {
         const response = await fetch(
-          `http://api.openweathermap.org/data/2.5/forecast?lat=37.56&lon=126.97&appid=${process.env.API_KEY}`
+          `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${process.env.API_KEY}`
         );
 
         if (!response.ok) {

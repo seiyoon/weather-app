@@ -1,5 +1,5 @@
-query getWeatherData {
-  weatherData {
+query GetWeatherData($cityName: String!) {
+  weatherData(cityName: $cityName) {
     city {
       name
       country
@@ -15,6 +15,8 @@ query getWeatherData {
         humidity
       }
       weather {
+        id
+        main
         description
         icon
       }

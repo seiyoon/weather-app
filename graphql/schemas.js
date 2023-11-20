@@ -2,7 +2,7 @@ import { gql } from "graphql-tag";
 
 const typeDefs = gql`
   type Query {
-    weatherData: WeatherData
+    weatherData(cityName: String!): WeatherData
   }
 
   type WeatherData {
