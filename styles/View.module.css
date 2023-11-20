@@ -9,13 +9,26 @@
 
 @media (min-width: 800px) and (max-width: 1279px) {
   .container {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: auto;
   }
 }
 
 @media (max-width: 799px) {
   .container {
-    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
   }
 }
