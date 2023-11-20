@@ -24,7 +24,13 @@ export default function WeatherListItem({ date, isToggled, onClick, details }) {
           <div className={styles.index_item}>
             {details.map((detail, index) => (
               <div key={index} className={styles.detailItem}>
-                <p>☀️</p>
+                <Image
+                  alt="weather"
+                  src={`https://openweathermap.org/img/w/${detail.weather[0].icon}.png`}
+                  width={50}
+                  height={50}
+                  loading="lazy"
+                />
                 <div className={styles.info}>
                   <p className={styles.text_time}>
                     {detail.dt_txt.slice(11, 16)}

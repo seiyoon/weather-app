@@ -6,11 +6,18 @@ export default function WeatherBar({ weatherData, cityData }) {
   if (!weatherData || !cityData) {
     return null;
   }
+  console.log(weatherData.weather[0].icon);
 
   return (
     <div className={styles.weather_bar}>
       <div className={styles.image}>
-        <Image alt="earth" src={earth} width={80} height={80} />
+        <Image
+          alt="weather"
+          src={`https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
+          width={80}
+          height={80}
+          loading="lazy"
+        />
       </div>
       <div className={styles.bar}>
         <div className={styles.first}>
